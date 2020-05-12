@@ -34,8 +34,8 @@
 
 #include <type_traits>
 
-// namespace bec
-// {
+namespace bec
+{
 
 template<typename Enum>
 struct EnableBitMaskOperators
@@ -139,4 +139,4 @@ operator ^=(Enum &lhs, Enum rhs)
     return lhs;
 }
 
-// } // namespace bec
+} // namespace bec
