@@ -34,6 +34,9 @@
 
 #include <type_traits>
 
+namespace bec
+{
+
 template<typename Enum>
 struct EnableBitMaskOperators
 {
@@ -41,97 +44,91 @@ struct EnableBitMaskOperators
 };
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
-operator |(Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator|(
+    Enum lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    return static_cast<Enum> (
+    return static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) |
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
-operator &(Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator&(
+    Enum lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    return static_cast<Enum> (
+    return static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) &
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
-operator ^(Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator^(
+    Enum lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    return static_cast<Enum> (
+    return static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) ^
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
-operator ~(Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator~(
+    Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    return static_cast<Enum> (
-        ~static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+    return static_cast<Enum>(~static_cast<std::underlying_type_t<Enum>>(rhs));
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
-operator |=(Enum &lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator|=(
+    Enum& lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    lhs = static_cast<Enum> (
+    lhs = static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) |
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 
     return lhs;
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
-operator &=(Enum &lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator&=(
+    Enum& lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    lhs = static_cast<Enum> (
+    lhs = static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) &
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 
     return lhs;
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
-operator ^=(Enum &lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator^=(
+    Enum& lhs, Enum rhs)
 {
-    static_assert(std::is_enum<Enum>::value,
-        "template parameter is not an enum type");
+    static_assert(
+        std::is_enum<Enum>::value, "template parameter is not an enum type");
 
-    lhs = static_cast<Enum> (
+    lhs = static_cast<Enum>(
         static_cast<std::underlying_type_t<Enum>>(lhs) ^
-        static_cast<std::underlying_type_t<Enum>>(rhs)
-    );
+        static_cast<std::underlying_type_t<Enum>>(rhs));
 
     return lhs;
 }
+
+} // namespace bec
