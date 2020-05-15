@@ -1,5 +1,3 @@
-#pragma once
-
 // (C) Copyright 2015 Just Software Solutions Ltd
 //
 // Distributed under the Boost Software License, Version 1.0.
@@ -32,6 +30,8 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#pragma once
+
 #include <type_traits>
 
 namespace bec
@@ -44,8 +44,8 @@ struct EnableBitMaskOperators
 };
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator|(
-    Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+operator|(Enum lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -56,8 +56,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operat
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator&(
-    Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+operator&(Enum lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -68,8 +68,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operat
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator^(
-    Enum lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+operator^(Enum lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -80,8 +80,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operat
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operator~(
-    Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+operator~(Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -90,8 +90,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type operat
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator|=(
-    Enum& lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+operator|=(Enum& lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -104,8 +104,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& opera
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator&=(
-    Enum& lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+operator&=(Enum& lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
@@ -118,8 +118,8 @@ typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& opera
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type& operator^=(
-    Enum& lhs, Enum rhs)
+typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+operator^=(Enum& lhs, Enum rhs)
 {
     static_assert(
         std::is_enum<Enum>::value, "template parameter is not an enum type");
