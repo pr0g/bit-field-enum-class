@@ -30,6 +30,13 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+// Code presented here is derived from:
+//  https://www.justsoftwaresolutions.co.uk/cplusplus/using-enum-classes-as-bitfields.html
+//  by Anthony Williams
+// More information available here:
+//  http://blog.bitwigglers.org/using-enum-classes-as-type-safe-bitmasks/
+//  by Andre Haupt
+
 #pragma once
 
 #include <type_traits>
