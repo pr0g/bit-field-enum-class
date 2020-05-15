@@ -16,7 +16,7 @@ BraceWrapping:
 ColumnLimit: 80
 IndentWidth: 4
 IndentPPDirectives: None
-PenaltyReturnTypeOnItsOwnLine: 1000000000
+PenaltyReturnTypeOnItsOwnLine: 1000000
 PointerAlignment: Left
 SpaceAfterTemplateKeyword: false
 Standard: c++11
