@@ -51,7 +51,7 @@ struct EnableBitMaskOperators
 };
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type
 operator|(Enum lhs, Enum rhs)
 {
     static_assert(
@@ -63,7 +63,7 @@ operator|(Enum lhs, Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type
 operator&(Enum lhs, Enum rhs)
 {
     static_assert(
@@ -75,7 +75,7 @@ operator&(Enum lhs, Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type
 operator^(Enum lhs, Enum rhs)
 {
     static_assert(
@@ -87,7 +87,7 @@ operator^(Enum lhs, Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type
 operator~(Enum rhs)
 {
     static_assert(
@@ -97,7 +97,7 @@ operator~(Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type&
 operator|=(Enum& lhs, Enum rhs)
 {
     static_assert(
@@ -111,7 +111,7 @@ operator|=(Enum& lhs, Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type&
 operator&=(Enum& lhs, Enum rhs)
 {
     static_assert(
@@ -125,7 +125,7 @@ operator&=(Enum& lhs, Enum rhs)
 }
 
 template<typename Enum>
-typename std::enable_if<EnableBitMaskOperators<Enum>::enable, Enum>::type&
+typename std::enable_if<EnableBitMaskOperators<Enum>::Enable, Enum>::type&
 operator^=(Enum& lhs, Enum rhs)
 {
     static_assert(
