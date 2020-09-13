@@ -47,7 +47,7 @@ namespace bec
 template<typename Enum>
 struct EnableBitMaskOperators
 {
-    static const bool enable = false;
+    static const bool Enable = false;
 };
 
 template<typename Enum>
